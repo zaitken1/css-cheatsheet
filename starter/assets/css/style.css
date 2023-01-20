@@ -1,0 +1,168 @@
+:root {
+    --white: #fff;
+    --light-blue: #A0CFD3;
+    --solid-border: solid #fff 2px;
+    --dotted-border: dashed #fff 2px;
+    --burgundy: #25171A;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    background-color: var(--burgundy);
+}
+
+header {
+    max-width: 100%;
+}
+
+h1 {
+    color: var(--light-blue);
+    margin: 35px 0 0 0;
+    display: flex;
+    justify-content: center;
+}
+
+.summary {
+    color: var(--white);
+    display: flex;
+    margin: 20px 15px 0 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 100%;
+}
+
+.container {
+    max-width: 100%;
+    margin: 50px 25px;
+    padding: 15px;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+        "cardOne cardTwo cardThree"
+        "cardFour cardFive cardSix";
+}
+
+.card {
+    border: var(--solid-border);
+    padding: 0 15px 0 15px;
+    margin: 10px;
+    border-radius: 20px;
+    transition: width 2s ease 1s;
+}
+
+#card-one {
+    grid-area: cardOne;
+}
+
+#card-two {
+    grid-area: cardTwo;
+}
+
+#card-three {
+    grid-area: cardThree;
+}
+
+#card-four {
+    grid-area: cardFour;
+}
+
+#card-five {
+    grid-area: cardFive;
+}
+
+#card-six {
+    grid-area: cardSix;
+}
+
+.card-heading,
+.card-text {
+    color: var(--light-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 20px 0 20px;
+}
+
+.card-heading:hover {
+    font-size: 25px;
+}
+
+.card-text:hover {
+    font-size: 15px;
+}
+
+.card-text {
+    margin: 30px 0 20px 0;
+}
+
+.code {
+    color: var(--white);
+    background: linear-gradient(#A0CFD3, #6969B3);
+    user-select: all;
+}
+
+::selection {
+    color: var(--white);
+    background: var(--burgundy);
+}
+
+@media screen and (max-width: 1352px) {
+    .summary {
+        text-align: center;
+    }
+
+    .container {
+        margin: 30px 10px;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "cardOne cardTwo cardThree"
+            "cardFour cardFive cardSix";
+    }
+}
+
+@media screen and (max-width: 1200px) {
+
+    .container {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+            "cardOne cardTwo cardThree"
+            "cardFour cardFive cardSix";
+    }
+}
+
+@media screen and (max-width: 1150px) {
+
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+            "cardOne cardTwo "
+            "cardThree cardFour"
+            "cardFive cardSix";
+    }
+}
+
+@media screen and (max-width: 760px) {
+
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "cardOne"
+            "cardTwo"
+            "cardThree"
+            "cardFour"
+            "cardFive"
+            "cardSix";
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    .container {
+        padding: 0;
+        margin: 30px 0;
+    }
+}
